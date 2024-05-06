@@ -684,9 +684,30 @@ function isPhoneNumberValid(phoneNumber) {
 // document.getElementById('stayOnPageLink').addEventListener('click', function(event) {
 //     var url = this.getAttribute('href');
 //     window.open(url, '_blank');
-    
+
 //     // Prevent the default link behavior
 //     event.preventDefault();
 //   });
-                
 
+
+document.addEventListener("DOMContentLoaded", function () {
+    var taxIdInput = document.getElementById("tax_id_number");
+    taxIdInput.addEventListener("input", function () {
+        var currentValue = taxIdInput.value;
+        var cleanedValue = currentValue.replace(/[^a-zA-Z0-9]/g, '');
+        if (cleanedValue !== currentValue) {
+            taxIdInput.value = cleanedValue;
+        }
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    var taxIdInput = document.getElementById("personal_id");
+    taxIdInput.addEventListener("input", function () {
+        var currentValue = taxIdInput.value;
+        var cleanedValue = currentValue.replace(/[^a-zA-Z0-9]/g, '');
+        if (cleanedValue !== currentValue) {
+            taxIdInput.value = cleanedValue;
+        }
+    });
+});
